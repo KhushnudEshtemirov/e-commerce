@@ -1,0 +1,20 @@
+.services {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #F3F9FF;
+
+  div {
+    flex: 1;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 20px;
+
+    img {
+      transform: scale(0.8);
+      margin-right: 15px;
+    }
+  }
+}

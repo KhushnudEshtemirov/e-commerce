@@ -1,0 +1,15 @@
+.slider-area {
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-right {
+  height: 380px;
+}
+
+.slider-right div {
+  height: 50%;
+  text-align: right;
+}

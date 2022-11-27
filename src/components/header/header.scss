@@ -1,0 +1,23 @@
+.header {
+  height: auto;
+  background-color: #E1EEFB;
+
+  .question {
+    height: 40px;
+    line-height: 40px;
+  }
+  
+  .mini-menu {
+    ul {
+      height: 40px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  
+    ul li {
+      list-style: none;
+      margin-left: 30px;
+    }
+  }
+}
