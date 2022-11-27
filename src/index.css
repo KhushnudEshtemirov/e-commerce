@@ -12,18 +12,18 @@
   border-radius: 5px;
 }
 
-body {
-  padding: 20px 50px;
-}
-
 a {
   text-decoration: none;
 }
 
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
 .section-title {
-  display: inline-block;
+  display: inline;
   border-bottom: 1px solid #1061AB;
-  margin: 40px 0;
   padding: 5px 0;
 }
 

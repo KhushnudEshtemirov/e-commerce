@@ -1,13 +1,10 @@
 import React from "react";
 
 import Navbar from "../navbar/navbar";
-import Slider from "../slider/slider";
-import Collection from "../collection/collection";
 
 import image from "../../images/brends/logo.png";
 
 import "./header.scss";
-import Service from "../services/service";
 
 const Header = () => (
   <div className="header">
@@ -39,9 +36,6 @@ const Header = () => (
       </div>
     </div>
     <Navbar />
-    <Slider />
-    <Service />
-    <Collection />
   </div>
 );
 
