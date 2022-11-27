@@ -1,0 +1,44 @@
+.footer {
+  margin-top: 40px;
+  padding: 40px;
+  padding-bottom: 80px;
+  background: #FFFFFF;
+  font-size: 1.2rem;
+  position: relative;
+
+  ul li {
+    list-style: none;
+    margin-bottom: 12px;
+  }
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  p > svg {
+    margin-right: 10px;
+    color: rgb(0, 41, 154);
+  }
+
+  .author {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background: rgba(203, 200, 200, 0.3);
+    padding: 0 20px;
+
+    p {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+    }
+  }
+}

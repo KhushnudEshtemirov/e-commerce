@@ -20,7 +20,7 @@ const Navbar = () => (
       <a href="#">Brends</a>
     </div>
     <div className="col-xl-5 col-lg-4 col-md-3 col-sm-2 search-field">
-      <span>Search...</span>
+      <input type="text" placeholder="Search..." />
       <TfiSearch />
     </div>
     <div className="col-lg-2 icons">

@@ -5,13 +5,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { data } from "../data";
-import "./best-seller.scss";
+import "./action.scss";
 
 import imgStar from "../../images/icons/star.png";
 import imgHalfStar from "../../images/icons/half-star.png";
 import { TfiHeart } from "react-icons/tfi";
 
-const BestSeller = () => {
+const Action = () => {
   var settings = {
     dots: true,
     infinite: true,
@@ -50,8 +50,8 @@ const BestSeller = () => {
   };
 
   return (
-    <div className="best-seller">
-      <h2 className="section-title">Best Sellers</h2>
+    <div className="actions-product">
+      <h2 className="section-title">Actions</h2>
       <div className="product-sort">
         <ul>
           <li className="active">All products</li>
@@ -65,18 +65,15 @@ const BestSeller = () => {
           <li>Washing machines</li>
         </ul>
       </div>
-      <div className="best-products">
+      <div className="action-products">
         <Slider {...settings}>
           {data.map((item) => {
-            if (item.top === true) {
+            if (item.discount === true) {
               return (
                 <div className="product border" key={item.id}>
                   <div className="product-img">
                     <img src={item.img} alt="img1" />
-                    <span>{item.top ? "TOP" : null}</span>
-                    {item.discount ? (
-                      <span className="action">ACTION</span>
-                    ) : null}
+                    <span className="action-product">ACTION</span>
                     <div className="heart-icon">
                       <TfiHeart />
                     </div>
@@ -107,9 +104,7 @@ const BestSeller = () => {
                         <span>${item.price}</span>
                         <button>ADD TO CART</button>
                       </div>
-                      {item.old_price ? (
-                        <span className="old-price">${item.old_price}</span>
-                      ) : null}
+                      <span className="old-price">${item.old_price}</span>
                     </div>
                   </div>
                 </div>
@@ -122,4 +117,4 @@ const BestSeller = () => {
   );
 };
 
-export default BestSeller;
+export default Action;

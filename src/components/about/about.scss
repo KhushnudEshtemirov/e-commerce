@@ -1,0 +1,29 @@
+.about-container {
+  margin-top: 80px;
+
+  .image-container {
+    position: relative;
+    
+    img {
+      position: absolute;
+    }
+  }
+
+  .bg-color {
+    background: #3BB9B8;
+  }
+
+  h2 {
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 30px;
+    color: #fff;
+    padding: 40px;
+    padding-left: 0;
+  }
+}

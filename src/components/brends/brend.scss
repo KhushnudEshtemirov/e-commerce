@@ -1,0 +1,19 @@
+.brends-container {
+  margin-top: 40px;
+
+  .brend-items {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 20px;
+
+    .brend-item {
+      background: #fff;
+      height: 132px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+}
