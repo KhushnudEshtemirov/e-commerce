@@ -72,7 +72,7 @@ const Action = () => {
               return (
                 <div className="product border" key={item.id}>
                   <div className="product-img">
-                    <img src={item.img} alt="img1" />
+                    <img src={item.img} alt="img1" className="image" />
                     <span className="action-product">ACTION</span>
                     <div className="heart-icon">
                       <TfiHeart />

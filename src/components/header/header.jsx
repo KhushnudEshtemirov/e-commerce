@@ -2,15 +2,17 @@ import React from "react";
 
 import Navbar from "../navbar/navbar";
 
-import image from "../../images/brends/logo.png";
+import image from "../../images/brends/logo1.png";
 
 import "./header.scss";
 
 const Header = () => (
   <div className="header">
-    <div className="row">
+    <div className="row mb-2">
       <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 logo">
-        <img src={image} alt="logo" width={150} />
+        <a href="#">
+          <img src={image} alt="logo" />
+        </a>
       </div>
       <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 question">
         Do you have a question?

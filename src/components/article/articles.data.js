@@ -27,7 +27,7 @@ export const article_data = [
   {
     id: 6,
     img: "https://img.freepik.com/free-photo/washing-machine-minimal-laundry-room-interior-design_53876-145501.jpg?size=626&ext=jpg&ga=GA1.2.725544338.1667018650",
-    title: "Anaerobic Thread Sealant",
+    title: "Anaerobic Thread Sealant Lorem ipsum dolor",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente minima quaerat laboriosam magnam sed. Excepturi reiciendis, voluptate provident exercitationem deleniti cumque amet molestiae cupiditate, sit ad optio quas    eveniet. A placeat reiciendis, beatae aperiam, eaque hic illo est sequi earum pariatur voluptas. Sint esse minus aut alias reiciendis possimus quo?",
   },
   {
