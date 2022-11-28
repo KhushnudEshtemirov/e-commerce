@@ -36,7 +36,7 @@
   }
 
   .next-icon {
-    right: 0;
+    right: -2px;
   }
 
   .slider-container {
@@ -123,4 +123,22 @@
 
 .right-top {
   background: #1061AB;
+}
+
+@media (max-width: 1280px) {
+  .slider-area {
+    width: 100%;
+
+    .slider-container {
+      width: 100%;
+  
+      .slider-items {
+        width: 100%;
+      }
+    }
+  }
+
+  .slider-right {
+    display: none;
+  }
 }

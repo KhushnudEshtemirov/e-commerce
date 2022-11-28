@@ -17,3 +17,40 @@
     }
   }
 }
+
+@media (max-width: 992px) {
+  .brends-container {
+    .brend-items {
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 10px;
+
+      .brend-item {
+        height: 80px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .brends-container {
+    .brend-items {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .brends-container {
+    .brend-items {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .brends-container {
+    .brend-items {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

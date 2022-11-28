@@ -7,6 +7,16 @@ import "./article.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+function SampleNextArrow(props) {
+  const { style } = props;
+  return <div style={{ ...style, display: "none" }} />;
+}
+
+function SamplePrevArrow(props) {
+  const { style } = props;
+  return <div style={{ ...style, display: "none" }} />;
+}
+
 const Article = () => {
   var settings = {
     dots: true,
@@ -17,6 +27,8 @@ const Article = () => {
     initialSlide: 0,
     autoplay: true,
     adaptiveHeight: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,

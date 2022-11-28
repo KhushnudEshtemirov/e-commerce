@@ -11,6 +11,16 @@ import imgStar from "../../images/icons/star.png";
 import imgHalfStar from "../../images/icons/half-star.png";
 import { TfiHeart } from "react-icons/tfi";
 
+function SampleNextArrow(props) {
+  const { style } = props;
+  return <div style={{ ...style, display: "none" }} />;
+}
+
+function SamplePrevArrow(props) {
+  const { style } = props;
+  return <div style={{ ...style, display: "none" }} />;
+}
+
 const Action = () => {
   var settings = {
     dots: true,
@@ -21,6 +31,8 @@ const Action = () => {
     initialSlide: 0,
     autoplay: true,
     adaptiveHeight: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,

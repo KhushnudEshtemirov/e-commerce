@@ -42,3 +42,36 @@
     }
   }
 }
+
+@media (max-width: 1240px) {
+  .footer {
+    padding: 10px;
+    padding-bottom: 60px;
+
+    ul {
+      padding: 0;
+    }
+
+    .first-menu,
+    .second-menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    height: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  
+}

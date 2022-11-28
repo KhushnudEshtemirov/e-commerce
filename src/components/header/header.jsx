@@ -1,44 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 
 import Navbar from "../navbar/navbar";
 
 import image from "../../images/brends/logo1.png";
 
+import { BsList } from "react-icons/bs";
+
 import "./header.scss";
 
-const Header = () => (
-  <div className="header">
-    <div className="row mb-2">
-      <div className="col-xl-2 col-lg-2 col-md-2 col-sm-2 logo">
-        <a href="#">
-          <img src={image} alt="logo" />
-        </a>
+const Header = () => {
+  const [showValue, setShowValue] = useState(false);
+
+  const showUl = () => {
+    setShowValue(!showValue);
+  };
+
+  return (
+    <div className="header">
+      <div className="mb-2 mobile-version">
+        <div className="logo">
+          <a href="#">
+            <img src={image} alt="logo" />
+          </a>
+        </div>
+        <div className="question">
+          Do you have a question?
+          <a href="tel:+998 97 577 77 28" className="phone">
+            +998 97 577 77 28
+          </a>
+        </div>
+        <div className="mini-menu">
+          <ul className={showValue ? "show" : null}>
+            <li>
+              <a href="#">Payment</a>
+            </li>
+            <li>
+              <a href="#">Delivery</a>
+            </li>
+            <li>
+              <a href="#">Provider</a>
+            </li>
+            <li>
+              <a href="#">Contacts</a>
+            </li>
+          </ul>
+        </div>
+        <div className="three-line" onClick={showUl}>
+          <BsList />
+        </div>
       </div>
-      <div className="col-xl-4 col-lg-4 col-md-4 col-sm-6 question">
-        Do you have a question?
-        <a href="tel:+998 97 577 77 28" className="phone">
-          +998 97 577 77 28
-        </a>
-      </div>
-      <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 mini-menu">
-        <ul>
-          <li>
-            <a href="#">Payment</a>
-          </li>
-          <li>
-            <a href="#">Delivery</a>
-          </li>
-          <li>
-            <a href="#">Provider</a>
-          </li>
-          <li>
-            <a href="#">Contacts</a>
-          </li>
-        </ul>
-      </div>
+      <Navbar />
     </div>
-    <Navbar />
-  </div>
-);
+  );
+};
 
 export default Header;

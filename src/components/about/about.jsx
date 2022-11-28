@@ -6,16 +6,16 @@ import img from "../../images/images/20.png";
 
 const About = () => (
   <div className="row about-container">
-    <div className="col-3">
+    <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
       <div className="image-container">
         <img src={img} alt="about-image" />
       </div>
     </div>
-    <div className="col-9">
+    <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
       <h2 className="text-center">About Mebeluz Company</h2>
       <div className="row bg-color">
-        <div className="col-4"></div>
-        <div className="col-8">
+        <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12"></div>
+        <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 about-text">
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque quia
             laborum eius asperiores ipsum modi. Quibusdam optio aspernatur harum

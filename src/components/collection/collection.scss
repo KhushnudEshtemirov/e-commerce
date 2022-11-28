@@ -63,3 +63,15 @@
 .collection-right-bottom {
   margin-top: 20px;
 }
+
+@media (max-width: 992px) {
+  .collections {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .collection-right div {
+    grid-template-columns: 1fr;
+  }
+}

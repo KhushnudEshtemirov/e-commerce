@@ -27,3 +27,52 @@
     padding-left: 0;
   }
 }
+
+@media (max-width: 1280px) {
+  .about-container {  
+    .image-container {
+      img {
+        width: 180%;
+      }
+    }
+  }
+
+  .about-text {
+    height: 350px;
+    overflow-y: auto;
+  }
+
+  .about-text::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  .about-text::-webkit-scrollbar-thumb {
+    background: #3BB9B8;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-container {  
+    .image-container {
+      img {
+        display: none;
+      }
+    }
+
+    p {
+      padding: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  
+}
+
+@media (max-width: 640px) {
+  
+}
+
+@media (max-width: 480px) {
+  
+}

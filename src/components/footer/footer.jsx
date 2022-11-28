@@ -13,7 +13,7 @@ let year = newDate.getFullYear();
 
 const Footer = () => (
   <div className="row footer">
-    <div className="col-3">
+    <div className="col-3 first-menu">
       <ul>
         <li>
           <a href="#">Tile</a>
@@ -35,7 +35,7 @@ const Footer = () => (
         </li>
       </ul>
     </div>
-    <div className="col-3">
+    <div className="col-3 second-menu">
       <ul>
         <li>
           <a href="#">Payment</a>
@@ -54,13 +54,13 @@ const Footer = () => (
         </li>
       </ul>
     </div>
-    <div className="col-3">
+    <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
       <h4>Work days</h4>
       <p>Mon-Fri: 09:00 - 20:00</p>
       <p>Saturday: 10:00 - 18:00</p>
       <p>Sunday: Closed</p>
     </div>
-    <div className="col-3">
+    <div className="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
       <h4>Contacts</h4>
       <p>
         <BsFillTelephoneOutboundFill />
