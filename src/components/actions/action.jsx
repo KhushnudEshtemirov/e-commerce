@@ -99,51 +99,54 @@ const Action = () => {
       <div className="action-products">
         <Slider {...settings}>
           {data.map((item) => {
-            if (item.discount === true)
-              <div className="product border" key={item.id}>
-                <div className="product-img">
-                  <img src={item.img} alt="img1" className="image" />
-                  <span className="action-product">DISCOUNT</span>
-                  <div className="heart-icon">
-                    <TfiHeart />
-                  </div>
-                  <p>QUICK VIEW</p>
-                </div>
-                <div className="product-details">
-                  <ul>
-                    <li>
-                      <img src={imgStar} alt="star" />
-                    </li>
-                    <li>
-                      <img src={imgStar} alt="star" />
-                    </li>
-                    <li>
-                      <img src={imgStar} alt="star" />
-                    </li>
-                    <li>
-                      <img src={imgStar} alt="star" />
-                    </li>
-                    <li>
-                      <img src={imgHalfStar} alt="star" />
-                    </li>
-                  </ul>
-                  <p className="title">{item.title}</p>
-                  <div className="cart-bottom">
-                    <span>{item.country}</span>
-                    <div>
-                      <span>${item.price}</span>
-                      <button
-                        onClick={() =>
-                          dispatch(addFurniture(handleClick(item)))
-                        }
-                      >
-                        ADD TO CART
-                      </button>
+            if (item.discount === true) {
+              return (
+                <div className="product border" key={item.id}>
+                  <div className="product-img">
+                    <img src={item.img} alt="img1" className="image" />
+                    <span className="action-product">DISCOUNT</span>
+                    <div className="heart-icon">
+                      <TfiHeart />
                     </div>
-                    <span className="old-price">${item.old_price}</span>
+                    <p>QUICK VIEW</p>
+                  </div>
+                  <div className="product-details">
+                    <ul>
+                      <li>
+                        <img src={imgStar} alt="star" />
+                      </li>
+                      <li>
+                        <img src={imgStar} alt="star" />
+                      </li>
+                      <li>
+                        <img src={imgStar} alt="star" />
+                      </li>
+                      <li>
+                        <img src={imgStar} alt="star" />
+                      </li>
+                      <li>
+                        <img src={imgHalfStar} alt="star" />
+                      </li>
+                    </ul>
+                    <p className="title">{item.title}</p>
+                    <div className="cart-bottom">
+                      <span>{item.country}</span>
+                      <div>
+                        <span>${item.price}</span>
+                        <button
+                          onClick={() =>
+                            dispatch(addFurniture(handleClick(item)))
+                          }
+                        >
+                          ADD TO CART
+                        </button>
+                      </div>
+                      <span className="old-price">${item.old_price}</span>
+                    </div>
                   </div>
                 </div>
-              </div>;
+              );
+            }
           })}
         </Slider>
       </div>
