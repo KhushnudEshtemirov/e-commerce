@@ -1,15 +1,18 @@
 import React from "react";
 import Slider from "react-slick";
+import { useSelector, useDispatch } from "react-redux";
+
+import { addFurniture } from "../../reduxtoolkit/furniture/furniture-slice";
+
+import { data } from "../data";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import { data } from "../data";
 import "./best-seller.scss";
 
 import imgStar from "../../images/icons/star.png";
 import imgHalfStar from "../../images/icons/half-star.png";
-import { TfiHeart } from "react-icons/tfi";
+import { BsHeartFill } from "react-icons/bs";
 
 function SampleNextArrow(props) {
   const { style } = props;
@@ -22,6 +25,42 @@ function SamplePrevArrow(props) {
 }
 
 const BestSeller = () => {
+  const { furnitureItems } = useSelector((state) => state.furniture);
+  const dispatch = useDispatch();
+
+  const handleClick = (product) => {
+    const isExist = furnitureItems.find((item) => item.id === product.id);
+
+    if (isExist) {
+      return furnitureItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    }
+
+    return [...furnitureItems, { ...product, quantity: 1 }];
+  };
+
+  const addFavorite = () => {
+    const heartIcon = document.querySelectorAll(".heart-icon");
+    heartIcon.forEach((item, id) => {
+      const svgs = item.querySelector("svg");
+      svgs.addEventListener("click", () => {
+        svgs.classList.toggle("favorite");
+      });
+    });
+  };
+
+  const addFavorite2 = () => {
+    const heartIcon = document.querySelectorAll(".heart-icon");
+    const products = document.querySelectorAll(".product");
+    heartIcon.forEach((item, id) => {
+      const svgs = item.querySelector("svg");
+      products[id].addEventListener("dblclick", () => {
+        svgs.classList.add("favorite");
+      });
+    });
+  };
+
   var settings = {
     dots: true,
     infinite: true,
@@ -82,15 +121,19 @@ const BestSeller = () => {
           {data.map((item) => {
             if (item.top === true) {
               return (
-                <div className="product border" key={item.id}>
+                <div
+                  className="product border"
+                  key={item.id}
+                  onDoubleClick={addFavorite2}
+                >
                   <div className="product-img">
                     <img src={item.img} alt="img1" />
                     <span>{item.top ? "TOP" : null}</span>
                     {item.discount ? (
-                      <span className="action">ACTION</span>
+                      <span className="action">DISCOUNT</span>
                     ) : null}
-                    <div className="heart-icon">
-                      <TfiHeart />
+                    <div className="heart-icon" onClick={addFavorite}>
+                      <BsHeartFill />
                     </div>
                     <p>QUICK VIEW</p>
                   </div>
@@ -117,7 +160,13 @@ const BestSeller = () => {
                       <span>{item.country}</span>
                       <div>
                         <span>${item.price}</span>
-                        <button>ADD TO CART</button>
+                        <button
+                          onClick={() =>
+                            dispatch(addFurniture(handleClick(item)))
+                          }
+                        >
+                          ADD TO CART
+                        </button>
                       </div>
                       {item.old_price ? (
                         <span className="old-price">${item.old_price}</span>
@@ -133,5 +182,9 @@ const BestSeller = () => {
     </div>
   );
 };
+
+// const mapDispatchToProp = (dispatch) => ({
+//   addFurniture: (item) => dispatch(addFurniture(item)),
+// });
 
 export default BestSeller;

@@ -1,10 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
+import { useDispatch, useSelector } from "react-redux";
+
+import { addFurniture } from "../../reduxtoolkit/furniture/furniture-slice";
+
+import { data } from "../data";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { data } from "../data";
 import "./action.scss";
 
 import imgStar from "../../images/icons/star.png";
@@ -22,6 +26,21 @@ function SamplePrevArrow(props) {
 }
 
 const Action = () => {
+  const dispatch = useDispatch();
+  const { furnitureItems } = useSelector((state) => state.furniture);
+
+  const handleClick = (product) => {
+    const isExist = furnitureItems.find((item) => item.id === product.id);
+
+    if (isExist) {
+      return furnitureItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    }
+
+    return [...furnitureItems, { ...product, quantity: 1 }];
+  };
+
   var settings = {
     dots: true,
     infinite: true,
@@ -63,7 +82,7 @@ const Action = () => {
 
   return (
     <div className="actions-product">
-      <h2 className="section-title">Actions</h2>
+      <h2 className="section-title">Discounts</h2>
       <div className="product-sort">
         <ul>
           <li className="active">All products</li>
@@ -80,48 +99,51 @@ const Action = () => {
       <div className="action-products">
         <Slider {...settings}>
           {data.map((item) => {
-            if (item.discount === true) {
-              return (
-                <div className="product border" key={item.id}>
-                  <div className="product-img">
-                    <img src={item.img} alt="img1" className="image" />
-                    <span className="action-product">ACTION</span>
-                    <div className="heart-icon">
-                      <TfiHeart />
-                    </div>
-                    <p>QUICK VIEW</p>
+            if (item.discount === true)
+              <div className="product border" key={item.id}>
+                <div className="product-img">
+                  <img src={item.img} alt="img1" className="image" />
+                  <span className="action-product">DISCOUNT</span>
+                  <div className="heart-icon">
+                    <TfiHeart />
                   </div>
-                  <div className="product-details">
-                    <ul>
-                      <li>
-                        <img src={imgStar} alt="star" />
-                      </li>
-                      <li>
-                        <img src={imgStar} alt="star" />
-                      </li>
-                      <li>
-                        <img src={imgStar} alt="star" />
-                      </li>
-                      <li>
-                        <img src={imgStar} alt="star" />
-                      </li>
-                      <li>
-                        <img src={imgHalfStar} alt="star" />
-                      </li>
-                    </ul>
-                    <p className="title">{item.title}</p>
-                    <div className="cart-bottom">
-                      <span>{item.country}</span>
-                      <div>
-                        <span>${item.price}</span>
-                        <button>ADD TO CART</button>
-                      </div>
-                      <span className="old-price">${item.old_price}</span>
+                  <p>QUICK VIEW</p>
+                </div>
+                <div className="product-details">
+                  <ul>
+                    <li>
+                      <img src={imgStar} alt="star" />
+                    </li>
+                    <li>
+                      <img src={imgStar} alt="star" />
+                    </li>
+                    <li>
+                      <img src={imgStar} alt="star" />
+                    </li>
+                    <li>
+                      <img src={imgStar} alt="star" />
+                    </li>
+                    <li>
+                      <img src={imgHalfStar} alt="star" />
+                    </li>
+                  </ul>
+                  <p className="title">{item.title}</p>
+                  <div className="cart-bottom">
+                    <span>{item.country}</span>
+                    <div>
+                      <span>${item.price}</span>
+                      <button
+                        onClick={() =>
+                          dispatch(addFurniture(handleClick(item)))
+                        }
+                      >
+                        ADD TO CART
+                      </button>
                     </div>
+                    <span className="old-price">${item.old_price}</span>
                   </div>
                 </div>
-              );
-            }
+              </div>;
           })}
         </Slider>
       </div>

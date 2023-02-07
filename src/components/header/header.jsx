@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Navbar from "../navbar/navbar";
 
@@ -19,29 +20,33 @@ const Header = () => {
     <div className="header">
       <div className="mb-2 mobile-version">
         <div className="logo">
-          <a href="#">
+          <Link to="/">
             <img src={image} alt="logo" />
-          </a>
+          </Link>
         </div>
         <div className="question">
           Do you have a question?
-          <a href="tel:+998 97 577 77 28" className="phone">
+          <a
+            href="tel:+998 97 577 77 28"
+            className="phone"
+            style={{ marginLeft: "6px" }}
+          >
             +998 97 577 77 28
           </a>
         </div>
         <div className="mini-menu">
           <ul className={showValue ? "show" : null}>
             <li>
-              <a href="#">Payment</a>
+              <Link to="">Payment</Link>
             </li>
             <li>
-              <a href="#">Delivery</a>
+              <Link to="">Delivery</Link>
             </li>
             <li>
-              <a href="#">Provider</a>
+              <Link to="">Provider</Link>
             </li>
             <li>
-              <a href="#">Contacts</a>
+              <Link to="">Contacts</Link>
             </li>
           </ul>
         </div>

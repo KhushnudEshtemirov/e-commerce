@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { SliderData } from "./slider.data";
 import BtnSlider from "./btnSlider";
@@ -7,6 +7,7 @@ import "./slider.scss";
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(1);
+  let slideInterval;
 
   const nextSlide = () => {
     if (slideIndex !== SliderData.length) {
@@ -28,7 +29,14 @@ const Slider = () => {
     setSlideIndex(index);
   };
 
-  setTimeout(nextSlide, 5000);
+  const autoSlide = () => {
+    slideInterval = setTimeout(nextSlide, 5000);
+  };
+
+  useEffect(() => {
+    autoSlide();
+    return () => clearInterval(slideInterval);
+  }, [slideIndex]);
 
   return (
     <div className="row slider">

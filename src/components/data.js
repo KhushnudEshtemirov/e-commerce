@@ -12,7 +12,7 @@ export const data = [
   {
     id: 2,
     img: "https://images.unsplash.com/photo-1622372738946-62e02505feb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGtpdGNoZW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
-    title: "Acrylic bathtub AM.PM Bliss L 180х80 W53A-180-080W-ARB",
+    title: "Acrylic bathtub AM.PM Bliss L 180х80 W53A-180-080W-ARB Updated",
     country: "German",
     price: 10000,
     top: true,

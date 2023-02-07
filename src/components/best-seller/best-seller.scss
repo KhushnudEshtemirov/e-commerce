@@ -98,6 +98,14 @@
     padding: 8px 10px;
     border-radius: 50%;
     display: none;
+
+    svg {
+      fill: rgb(188, 188, 188);
+
+      &.favorite {
+        fill: rgb(255, 45, 45);
+      }
+    }
   }
 
   svg {
