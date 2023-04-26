@@ -40,7 +40,7 @@ const Slider = () => {
 
   return (
     <div className="row slider">
-      <div className="col-xl-8 col-lg-8 col-md-6 col-12 slider-area border">
+      <div className="col-xl-8 col-lg-8 col-md-6 col-12 slider-area">
         <BtnSlider moveSlide={prevSlide} direction={"prev"} />
         <div className="slider-container">
           <div className="slider-items">

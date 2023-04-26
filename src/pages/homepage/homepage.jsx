@@ -15,16 +15,18 @@ import "./homepage.scss";
 
 const Homepage = () => (
   <div className="container-fluid homepage">
-    <Header />
-    <Slider />
-    <Service />
-    <Collection />
-    <BestSeller />
-    <Action />
-    <Brends />
-    <Article />
-    <About />
-    <Footer />
+    <div className="container">
+      <Header />
+      <Slider />
+      <Service />
+      <Collection />
+      <BestSeller />
+      <Action />
+      <Brends />
+      <Article />
+      <About />
+      <Footer />
+    </div>
   </div>
 );
 

@@ -73,7 +73,7 @@ const Navbar = () => {
                       <p>{item.title}</p>
                       <span>${item.price}</span>
                     </div>
-                    <div>
+                    <div className="search-add-btn">
                       <button
                         onClick={() =>
                           dispatch(addFurniture(handleClick(item)))

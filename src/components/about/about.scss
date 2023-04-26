@@ -2,15 +2,17 @@
   margin-top: 80px;
 
   .image-container {
+    width: 570px;
     position: relative;
-    
+
     img {
+      width: 100%;
       position: absolute;
     }
   }
 
   .bg-color {
-    background: #3BB9B8;
+    background: #3bb9b8;
   }
 
   h2 {
@@ -29,14 +31,6 @@
 }
 
 @media (max-width: 1280px) {
-  .about-container {  
-    .image-container {
-      img {
-        width: 180%;
-      }
-    }
-  }
-
   .about-text {
     height: 350px;
     overflow-y: auto;
@@ -47,12 +41,12 @@
   }
 
   .about-text::-webkit-scrollbar-thumb {
-    background: #3BB9B8;
+    background: #3bb9b8;
   }
 }
 
 @media (max-width: 992px) {
-  .about-container {  
+  .about-container {
     .image-container {
       img {
         display: none;
@@ -63,16 +57,4 @@
       padding: 10px;
     }
   }
-}
-
-@media (max-width: 768px) {
-  
-}
-
-@media (max-width: 640px) {
-  
-}
-
-@media (max-width: 480px) {
-  
 }
